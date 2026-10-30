@@ -1,0 +1,66 @@
+<!-- Interactive gallery of recursive fractals with two generation settings. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate 20 fractal forms by selecting a type and recursion depth.">
+    <title>Fractal | Louis du Beux</title>
+    <link rel="stylesheet" href="/Lib/Bootstrap4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fractal.css">
+    <link rel="stylesheet" href="/Theme.css">
+    <script src="/NavBar.js" defer></script>
+    <script src="fractal.js" defer></script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <main class="container py-4">
+        <header class="intro">
+            <p class="eyebrow">Patterns from repetition</p>
+            <h1>Fractal</h1>
+            <p>Choose a form. Change its depth. Watch a simple rule become intricate.</p>
+        </header>
+        <!-- These are the only generation settings; changes render automatically. -->
+        <section class="settings" aria-label="Fractal settings">
+            <div>
+                <label for="fractal-type">Fractal type</label>
+                <select id="fractal-type">
+                    <option value="cantor">Cantor set</option>
+                    <option value="dragon">Dragon curve</option>
+                    <option value="bush">Fractal bush</option>
+                    <option value="plant">Fractal plant</option>
+                    <option value="tree">Fractal tree</option>
+                    <option value="gosper">Gosper curve</option>
+                    <option value="hilbert">Hilbert curve</option>
+                    <option value="kochcurve">Koch curve</option>
+                    <option value="koch" selected>Koch snowflake</option>
+                    <option value="levy">Lévy C curve</option>
+                    <option value="minkowski">Minkowski sausage</option>
+                    <option value="moore">Moore curve</option>
+                    <option value="peano">Peano curve</option>
+                    <option value="quadratic">Quadratic Koch curve</option>
+                    <option value="island">Quadratic Koch island</option>
+                    <option value="arrowhead">Sierpiński arrowhead</option>
+                    <option value="carpet">Sierpiński carpet</option>
+                    <option value="triangle">Sierpiński triangle</option>
+                    <option value="terdragon">Terdragon curve</option>
+                    <option value="vicsek">Vicsek fractal</option>
+                </select>
+            </div>
+            <div>
+                <label for="recursion">Recursion number</label>
+                <input id="recursion" type="number" min="0" max="6" step="1" value="4" aria-describedby="depth-help">
+                <small id="depth-help">0–6 · 0 shows the starting shape.</small>
+            </div>
+        </section>
+        <figure class="viewer">
+            <canvas id="fractal-canvas" role="img" aria-label="Koch snowflake at recursion 4">Your browser needs canvas support to draw fractals.</canvas>
+            <figcaption>
+                <div><h2 id="form-title">Koch snowflake</h2><p id="form-description"></p></div>
+                <span id="render-status" role="status" aria-live="polite"></span>
+            </figcaption>
+        </figure>
+        <p class="references">Explore the mathematics: <a href="https://mathworld.wolfram.com/Fractal.html">Fractals</a> · <a href="https://mathworld.wolfram.com/KochSnowflake.html">Koch snowflake</a> · <a href="https://mathworld.wolfram.com/SierpinskiCarpet.html">Sierpiński carpet</a> · <a href="https://www.robertdickau.com/lsys2d.html">Fractal curve rules</a></p>
+    </main>
+</body>
+</html>
